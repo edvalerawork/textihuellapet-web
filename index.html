@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TextiHuella Pet</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Librería de iconos Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <div id="navbar"></div>
+
+    <!-- Contenido principal de la página -->
+    <main>
+      <section class="hero-slider">
+        <div class="slides-container">
+          <!-- Slide 1 -->
+          <div
+            class="slide"
+            style="background-image: url(assets/img/carousel-1.jpg)"
+          >
+            <div class="overlay"></div>
+            <div class="hero-content">
+              <p class="hero-subtitle">SOSTENIBILIDAD Y AMOR</p>
+              <h1>
+                Dale nueva vida a tu ropa y crea algo único para tu mascota
+              </h1>
+              <a href="productos.html" class="hero-btn">Descubrir más</a>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div
+            class="slide"
+            style="background-image: url(assets/img/carousel-2.jpg)"
+          >
+            <div class="overlay"></div>
+            <div class="hero-content">
+              <p class="hero-subtitle">PERSONALIZACIÓN REAL</p>
+              <h1>Productos hechos con tus prendas y tu historia</h1>
+              <a href="productos.html" class="hero-btn">Ver productos</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flechas -->
+        <button class="slider-arrow prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <button class="slider-arrow next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="js/components.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/hero-slider.js"></script>
+  </body>
+</html>

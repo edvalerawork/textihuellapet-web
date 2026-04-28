@@ -1,0 +1,236 @@
+/* =========================
+   HERO SLIDER
+========================= */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* CONTENEDOR DE SLIDES */
+.slides-container {
+  display: flex;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+/* CADA SLIDE */
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* CAPA OSCURA */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* CONTENIDO */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  color: white;
+}
+
+/* SUBTÍTULO */
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* TÍTULO */
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  max-width: 950px;
+  margin-bottom: 30px;
+}
+
+/* BOTÓN */
+.hero-btn {
+  display: inline-block;
+  background: #8ca39c;
+  color: white;
+  padding: 18px 45px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #7b918b;
+}
+
+/* FLECHAS */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 65px;
+  height: 65px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(216, 154, 115, 0.85);
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 5;
+  transition: 0.3s ease;
+}
+
+.slider-arrow:hover {
+  background: rgba(216, 154, 115, 1);
+}
+
+.slider-arrow.prev {
+  left: 40px;
+}
+
+.slider-arrow.next {
+  right: 40px;
+}
+
+/* =========================
+   HERO SLIDER RESPONSIVE
+========================= */
+
+/* TABLETS */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 4rem;
+    max-width: 800px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .hero-btn {
+    font-size: 1.1rem;
+    padding: 16px 38px;
+  }
+
+  .slider-arrow {
+    width: 55px;
+    height: 55px;
+    font-size: 1.7rem;
+  }
+
+  .slider-arrow.prev {
+    left: 25px;
+  }
+
+  .slider-arrow.next {
+    right: 25px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 85vh;
+  }
+
+  .hero-content {
+    padding: 0 25px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 14px 34px;
+    border-radius: 40px;
+  }
+
+  .slider-arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    top: 58%;
+  }
+
+  .slider-arrow.prev {
+    left: 18px;
+  }
+
+  .slider-arrow.next {
+    right: 18px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 480px) {
+  .hero-slider {
+    height: 82vh;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    max-width: 100%;
+  }
+
+  .hero-btn {
+    font-size: 0.95rem;
+    padding: 13px 30px;
+  }
+
+  .slider-arrow {
+    width: 46px;
+    height: 46px;
+    font-size: 1.3rem;
+  }
+}
+
+/* EXTRA PEQUEÑOS */
+@media (max-width: 360px) {
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .hero-btn {
+    font-size: 0.85rem;
+    padding: 12px 26px;
+  }
+
+  .slider-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+}
