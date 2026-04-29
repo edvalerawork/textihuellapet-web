@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TextiHuella Pet</title>
+    <title>Inicio | TextiHuella Pet</title>
+    <link href="assets/img/logo-textihuella.png" rel="icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -131,6 +132,52 @@
           </div>
         </div>
       </section>
+      <section class="story-section">
+        <div class="story-container">
+          <!-- IZQUIERDA (IMAGEN + PLAY) -->
+          <div class="story-media">
+            <img
+              src="assets/img/promocion-demo.jpg"
+              alt="Juguete personalizado TextiHuella"
+            />
+
+            <button class="story-play" id="openVideo">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+
+          <!-- DERECHA (TEXTO) -->
+          <div class="story-content">
+            <span class="story-badge">Producto destacado</span>
+
+            <h2>De tu ropa a su compañía</h2>
+
+            <p>
+              Conoce cómo transformamos prendas llenas de historia en juguetes
+              personalizados que acompañan a tu mascota incluso cuando no estás.
+            </p>
+
+            <button class="story-btn" id="openVideoBtn">Ver historia</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODAL VIDEO -->
+      <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+          <span class="close-modal" id="closeVideo">&times;</span>
+
+          <iframe
+            id="videoFrame"
+            src=""
+            title="Video TextiHuella"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
     </main>
 
     <!-- Pie de página -->
