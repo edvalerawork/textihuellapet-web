@@ -1,0 +1,327 @@
+/* =========================
+   ABOUT SECTION
+========================= */
+.about-section {
+  width: 100%;
+  background: #f6f3ee;
+  padding: 100px 20px;
+}
+
+/* HEADER */
+.about-header {
+  text-align: center;
+  max-width: 950px;
+  margin: 0 auto 70px;
+}
+
+.about-line {
+  width: 110px;
+  height: 4px;
+  background: #7f9b95;
+  margin: 0 auto 25px;
+  border-radius: 5px;
+}
+
+.about-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.2;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.about-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: nowrap;
+  padding: 30px;
+}
+
+/* BLOQUES */
+.about-block {
+  flex: 1;
+  min-width: 0;
+  max-width: 430px;
+}
+.about-block h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  min-height: 55px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.about-block h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #5b6d82;
+  line-height: 1.35;
+  margin-bottom: 25px;
+  min-height: 90px;
+}
+
+.about-block p {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* IMAGEN */
+.about-image {
+  flex: 0 0 320px;
+  max-width: 420px;
+  min-width: 0;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* LISTA */
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 35px;
+}
+
+.about-list li {
+  font-size: 1.15rem;
+  color: #5b6d82;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 35px;
+  font-weight: 500;
+}
+
+.about-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #d89a73;
+  font-weight: bold;
+}
+
+/* BOTONES */
+.about-btn {
+  display: inline-block;
+  padding: 18px 38px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.about-btn-orange {
+  background: #d89a73;
+  color: white;
+}
+
+.about-btn-orange:hover {
+  background: #c8865f;
+}
+
+.about-btn-green {
+  background: #8ca39c;
+  color: white;
+}
+
+.about-btn-green:hover {
+  background: #758f88;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* LAPTOPS / TABLETS GRANDES */
+@media (max-width: 1200px) {
+  .about-container {
+    max-width: 1100px;
+    gap: 35px;
+  }
+
+  .about-block {
+    max-width: 360px;
+  }
+
+  .about-image {
+    max-width: 450px;
+  }
+
+  .about-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-block h3 {
+    font-size: 1.7rem;
+  }
+
+  .about-block h4 {
+    font-size: 1.15rem;
+  }
+
+  .about-block p,
+  .about-list li {
+    font-size: 1rem;
+  }
+}
+
+/* TABLETS */
+@media (max-width: 992px) {
+  .about-section {
+    padding: 85px 25px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .about-block,
+  .about-image {
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .about-block h3,
+  .about-block h4,
+  .about-block p {
+    text-align: left;
+  }
+
+  .about-image {
+    order: 2;
+  }
+
+  .about-right {
+    order: 3;
+  }
+
+  .about-list {
+    text-align: left;
+  }
+
+  .about-list li {
+    display: block;
+    text-align: left;
+  }
+
+  .about-btn {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .about-header h2 {
+    font-size: 2.4rem;
+  }
+
+  .about-block h3 {
+    font-size: 2rem;
+  }
+
+  .about-block h4 {
+    font-size: 1.45rem;
+  }
+
+  .about-block p,
+  .about-list li {
+    font-size: 1.15rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 70px 18px;
+  }
+
+  .about-header {
+    margin-bottom: 45px;
+  }
+
+  .about-header h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .about-line {
+    width: 90px;
+    margin-bottom: 20px;
+  }
+
+  .about-block h3 {
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .about-block h4 {
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  .about-block p {
+    font-size: 1.05rem;
+    text-align: left;
+    line-height: 1.7;
+  }
+
+  .about-list {
+    text-align: left;
+  }
+
+  .about-list li {
+    font-size: 1.05rem;
+    display: block;
+    text-align: left;
+  }
+
+  .about-btn {
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .about-image img {
+    border-radius: 8px;
+  }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 480px) {
+  .about-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .about-block h3 {
+    font-size: 1.55rem;
+  }
+
+  .about-block h4 {
+    font-size: 1.15rem;
+  }
+
+  .about-block p,
+  .about-list li {
+    font-size: 0.98rem;
+  }
+
+  .about-btn {
+    font-size: 0.95rem;
+    padding: 14px 28px;
+  }
+
+  .about-line {
+    width: 75px;
+  }
+}
