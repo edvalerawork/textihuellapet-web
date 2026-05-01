@@ -347,6 +347,7 @@
 /* CARD */
 .service-card {
   flex: 0 0 calc((100% - 64px) / 3);
+  max-width: calc((100% - 64px) / 3);
   background: white;
   border-radius: 22px;
   position: relative;
@@ -550,6 +551,7 @@
 
   .service-card {
     flex: 0 0 calc((100% - 32px) / 2);
+    max-width: calc((100% - 32px) / 2);
     min-height: auto;
     padding: 85px 22px 35px;
     margin-top: 60px;
@@ -652,6 +654,8 @@
   }
 
   .service-card {
+    flex: 0 0 100%;
+    max-width: 100%;
     padding: 78px 18px 30px;
     border-radius: 18px;
     flex: 0 0 100%;
