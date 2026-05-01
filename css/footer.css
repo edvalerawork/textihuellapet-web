@@ -3,9 +3,9 @@
 ========================= */
 .footer-container {
     width: 100%;
+    min-height: 100vh;
     background: #f8f8f8;
-    padding: 80px 20px 40px;
-    margin-top: 90px;
+    padding: 90px 0;
 }
 
 /* CONTENEDOR */
@@ -103,14 +103,14 @@
     width: 100%;
     max-width: 900px;
     height: 1px;
-    background: #d7dfdc;
+    background: #d89a7352;
     margin: 0 auto 30px;
 }
 
 .footer-divider-small {
-    width: 90px;
+    width: 150px;
     height: 1px;
-    background: #d89a73;
+    background: #d7dfdc;
     margin: 18px auto;
 }
 

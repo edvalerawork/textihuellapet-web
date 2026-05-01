@@ -365,17 +365,17 @@
   transform: translateX(-50%);
   width: 125px;
   height: 125px;
-  border-radius: 50%;
+  border-radius: 20%;
   background: white;
-  padding: 8px;
-  box-shadow: 0 12px 0 #e1a074;
+  padding: 5px;
+  box-shadow: 0px 4px 0px 3px #e1a074;
 }
 
 .service-icon img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
 /* CONTENT */
