@@ -10,7 +10,7 @@
   .nav-left,
   .nav-right {
     gap: 18px;
-    padding: 0 10px;
+    padding-inline: 2%;
   }
 
   .nav-left a,
@@ -19,7 +19,7 @@
   }
 
   .logo-main {
-    font-size: clamp(2.4rem, 2.5vw, 3rem);
+    font-size: clamp(2rem, 2.3vw, 2.6rem);
   }
 
   .logo-pet-below {
@@ -32,15 +32,28 @@
    TABLETS
 ========================= */
 @media (max-width: 992px) {
+  /* Ocultar navbar desktop */
   .nav-wrapper {
-    width: 95%;
-    padding: 16px 20px;
+    display: none;
   }
 
+  /* Mostrar navbar móvil */
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    margin: 0 auto;
+    background: white;
+    padding: 14px 20px;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+  
   .nav-left,
   .nav-right {
-    gap: 15px;
-    padding: 0 8px;
+    gap: 12px;
+    padding-inline: 1.5%;
   }
 
   .nav-left a,
@@ -48,16 +61,10 @@
     font-size: clamp(13px, 1vw, 16px);
   }
 
-  .logo-main {
-    font-size: clamp(2.2rem, 2.3vw, 2.8rem);
+  .mobile-header .logo-main {
+    font-size: clamp(1.9rem, 3.5vw, 2.3rem);
   }
-
-  .logo-pet-below {
-    width: 100%;
-    text-align: center;
-    font-size: clamp(0.65rem, 0.7vw, 0.85rem);
-    letter-spacing: 3px;
-  }
+  
 }
 
 /* =========================
@@ -92,7 +99,7 @@
   }
 
   .mobile-header .logo-main {
-    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-size: clamp(1.7rem, 4vw, 2.1rem);
     font-weight: 800;
     letter-spacing: -1px;
   }
@@ -137,7 +144,7 @@
   }
 
   .mobile-header .logo-main {
-    font-size: clamp(1.8rem, 5vw, 2rem);
+    font-size: clamp(1.5rem, 4vw, 1.9rem);
   }
 
   .mobile-header .logo-pet-below {
@@ -163,7 +170,7 @@
 ========================= */
 @media (max-width: 360px) {
   .mobile-header .logo-main {
-    font-size: clamp(1.5rem, 5vw, 1.7rem);
+    font-size: clamp(1.3rem, 4vw, 1.7rem);
   }
 
   .mobile-header .logo-pet-below {
