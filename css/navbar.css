@@ -24,12 +24,13 @@
 .nav-wrapper {
   width: 95%;
   max-width: 1250px;
+  padding: 14px 28px;
   margin: 0 auto;
   background: white;
   border-radius: 0 0 40px 40px;
-  padding: 18px 35px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 35px;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -41,7 +42,7 @@
   list-style: none;
   gap: 25px;
   align-items: center;
-  padding-inline: 3%;
+  padding-inline: 1%;
 }
 
 /* LINKS */
@@ -50,7 +51,7 @@
   text-decoration: none;
   color: #333;
   font-weight: 600;
-  font-size: clamp(14px, 1.2vw, 19px);
+  font-size: clamp(15px, 0.95vw, 18px);
   white-space: nowrap;
   transition: 0.3s ease;
 }
@@ -61,14 +62,18 @@
 .nav-right a.active {
   color: #8ca39c;
 }
-
+.nav-left a.active,
+.nav-right a.active {
+  border-bottom: 2px solid #8ca39c;
+  padding-bottom: 4px;
+}
 /* LOGO TEXTO */
 .logo-navbar {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0;
   line-height: 1;
   margin: 0;
   flex-wrap: wrap;
@@ -77,14 +82,14 @@
 /* CONTENEDOR DEL LOGO */
 .logo-center {
   flex-shrink: 0;
-  margin: 0 10px;
+  margin: 0 4px;
 }
 
 /* TEXTO PRINCIPAL */
 .logo-main {
-  font-size: clamp(2.2rem, 2.8vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -2px;
+  font-size: clamp(2.5rem, 2.8vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -1px;
   color: #7f9b95;
 }
 
@@ -102,7 +107,6 @@
   font-weight: 500;
   letter-spacing: 4px;
   color: #7f9b95;
-  margin-top: 3px;
 }
 
 /* MOBILE HEADER */
