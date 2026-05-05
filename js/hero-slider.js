@@ -1,23 +1,23 @@
-// Espera a que el contenido cargue completamente
+// Esperar a que el contenido cargue completamente
 document.addEventListener("DOMContentLoaded", function () {
-  // Selecciona el contenedor de slides
+  // Seleccionar contenedor principal
   const slidesContainer = document.querySelector(".slides-container");
 
-  // Selecciona todos los slides originales
+  // Seleccionar slides originales
   const slides = document.querySelectorAll(".slide");
 
-  // Selecciona botones
+  // Seleccionar botones de navegación
   const prevBtn = document.querySelector(".slider-arrow.prev");
   const nextBtn = document.querySelector(".slider-arrow.next");
 
-  // Clonar primer y último slide
+  // Clonar primer y último slide para efecto infinito
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[slides.length - 1].cloneNode(true);
 
   firstClone.id = "first-clone";
   lastClone.id = "last-clone";
 
-  // Insertar clones
+  // Insertar clones en el slider
   slidesContainer.appendChild(firstClone);
   slidesContainer.insertBefore(lastClone, slidesContainer.firstChild);
 
@@ -30,27 +30,29 @@ document.addEventListener("DOMContentLoaded", function () {
   // Posición inicial
   slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
 
-  // Mostrar slide
+  // Mover al slide actual
   function moveToSlide() {
     slidesContainer.style.transition = "transform 0.8s ease-in-out";
     slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
   }
 
-  // Siguiente
+  // Avanzar al siguiente slide
   function nextSlide() {
     if (currentSlide >= allSlides.length - 1) return;
+
     currentSlide++;
     moveToSlide();
   }
 
-  // Anterior
+  // Retroceder al slide anterior
   function prevSlide() {
     if (currentSlide <= 0) return;
+
     currentSlide--;
     moveToSlide();
   }
 
-  // Reset invisible cuando llega a clones
+  // Reinicio invisible al llegar a clones
   slidesContainer.addEventListener("transitionend", () => {
     if (allSlides[currentSlide].id === "first-clone") {
       slidesContainer.style.transition = "none";
@@ -65,15 +67,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Eventos botones
+  // Evento botón siguiente
   if (nextBtn) {
     nextBtn.addEventListener("click", nextSlide);
   }
 
+  // Evento botón anterior
   if (prevBtn) {
     prevBtn.addEventListener("click", prevSlide);
   }
 
-  // Auto slide
+  // Cambio automático de slides
   setInterval(nextSlide, 5000);
 });

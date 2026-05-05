@@ -1,6 +1,4 @@
-/* =========================
-   LAPTOPS PEQUEÑAS
-========================= */
+/* Laptops pequeñas */
 @media (max-width: 1200px) {
   .nav-wrapper {
     width: 95%;
@@ -28,11 +26,9 @@
   }
 }
 
-/* =========================
-   TABLETS
-========================= */
+/* Tablets */
 @media (max-width: 992px) {
-  /* Ocultar navbar desktop */
+  /* Ocultar navbar de escritorio */
   .nav-wrapper {
     display: none;
   }
@@ -66,11 +62,9 @@
   }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* Móviles */
 @media (max-width: 768px) {
-  /* Ocultar navbar desktop */
+  /* Ocultar navbar de escritorio */
   .nav-wrapper {
     display: none;
   }
@@ -110,7 +104,7 @@
     letter-spacing: 4px;
   }
 
-  /* Menú hamburguesa */
+  /* Botón hamburguesa */
   .menu-toggle {
     font-size: 30px;
     padding: 8px 14px;
@@ -133,9 +127,7 @@
   }
 }
 
-/* =========================
-   CELULARES PEQUEÑOS
-========================= */
+/* Celulares pequeños */
 @media (max-width: 480px) {
   .mobile-header {
     padding: 12px 16px;
@@ -163,9 +155,7 @@
   }
 }
 
-/* =========================
-   EXTRA PEQUEÑOS
-========================= */
+/* Pantallas extra pequeñas */
 @media (max-width: 360px) {
   .mobile-header .logo-main {
     font-size: clamp(1.3rem, 4vw, 1.7rem);

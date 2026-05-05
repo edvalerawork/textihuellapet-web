@@ -1,13 +1,15 @@
-// Inicializa la funcionalidad del menú móvil
+// Inicializar funcionalidad del menú móvil
 function initNavbar() {
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (menuToggle && mobileMenu) {
+
+    // Evento para abrir o cerrar menú
     menuToggle.addEventListener("click", () => {
       mobileMenu.classList.toggle("active");
 
-      // Cambia icono hamburguesa / cerrar
+      // Cambiar icono entre hamburguesa y cerrar
       const icon = menuToggle.querySelector("i");
 
       if (mobileMenu.classList.contains("active")) {
@@ -18,5 +20,6 @@ function initNavbar() {
         icon.classList.add("fa-bars");
       }
     });
+
   }
 }

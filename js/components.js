@@ -4,7 +4,7 @@ fetch("components/navbar.html")
   .then((data) => {
     document.getElementById("navbar").innerHTML = data;
 
-    // Activar menú móvil después de insertar navbar
+    // Inicializar menú móvil después de cargar navbar
     initNavbar();
   });
 

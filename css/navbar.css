@@ -1,4 +1,4 @@
-/* RESET BÁSICO */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* NAVBAR GENERAL */
+/* Contenedor general del navbar */
 .navbar-container {
   width: 100%;
   padding-bottom: 15px;
@@ -15,12 +15,12 @@
   background-color: #8ca39c;
 }
 
-/* NAV PRINCIPAL */
+/* Navegación principal */
 .navbar {
   width: 100%;
 }
 
-/* CAJA PRINCIPAL */
+/* Caja principal */
 .nav-wrapper {
   width: 95%;
   max-width: 1250px;
@@ -35,7 +35,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* MENÚS */
+/* Menús laterales */
 .nav-left,
 .nav-right {
   display: flex;
@@ -45,7 +45,7 @@
   padding-inline: 1%;
 }
 
-/* LINKS */
+/* Enlaces de navegación */
 .nav-left a,
 .nav-right a {
   text-decoration: none;
@@ -62,12 +62,14 @@
 .nav-right a.active {
   color: #8ca39c;
 }
+
 .nav-left a.active,
 .nav-right a.active {
   border-bottom: 2px solid #8ca39c;
   padding-bottom: 4px;
 }
-/* LOGO TEXTO */
+
+/* Logo principal */
 .logo-navbar {
   display: flex;
   flex-direction: row;
@@ -79,13 +81,13 @@
   flex-wrap: wrap;
 }
 
-/* CONTENEDOR DEL LOGO */
+/* Contenedor central del logo */
 .logo-center {
   flex-shrink: 0;
   margin: 0 4px;
 }
 
-/* TEXTO PRINCIPAL */
+/* Texto principal del logo */
 .logo-main {
   font-size: clamp(2.5rem, 2.8vw, 3rem);
   font-weight: 700;
@@ -93,12 +95,12 @@
   color: #7f9b95;
 }
 
-/* COLOR "Texti" */
+/* Color secundario */
 .logo-main .text-secondary {
   color: #d89a73;
 }
 
-/* SUBTÍTULO PET */
+/* Subtítulo */
 .logo-pet-below {
   display: block;
   width: 100%;
@@ -109,12 +111,12 @@
   color: #7f9b95;
 }
 
-/* MOBILE HEADER */
+/* Encabezado móvil */
 .mobile-header {
   display: none;
 }
 
-/* BOTÓN HAMBURGUESA */
+/* Botón hamburguesa */
 .menu-toggle {
   width: 52px;
   height: 52px;
@@ -135,7 +137,7 @@
   background: #f5f5f5;
 }
 
-/* MOBILE MENU */
+/* Menú móvil */
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -147,6 +149,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Enlaces móviles */
 .mobile-menu a {
   padding: 15px 20px;
   text-decoration: none;
@@ -161,6 +164,7 @@
   color: #8ca39c;
 }
 
+/* Menú móvil activo */
 .mobile-menu.active {
   display: flex;
 }
