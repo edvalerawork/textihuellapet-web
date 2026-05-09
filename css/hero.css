@@ -54,7 +54,7 @@
 
 /* Título principal */
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 3.3rem;
   font-weight: 800;
   line-height: 1.15;
   max-width: 950px;
@@ -78,41 +78,42 @@
   background: #7b918b;
 }
 
-/* Flechas de navegación */
-.slider-arrow {
+/* Navegación */
+.hero-dots {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 65px;
-  height: 65px;
-  border: none;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 6;
+}
+
+.hero-dot {
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: rgba(216, 154, 115, 0.85);
-  color: white;
-  font-size: 2rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
   cursor: pointer;
-  z-index: 5;
   transition: 0.3s ease;
+  padding: 0;
 }
 
-.slider-arrow:hover {
-  background: rgba(216, 154, 115, 1);
+.hero-dot:hover {
+  background: rgba(255, 255, 255, 0.75);
 }
 
-.slider-arrow.prev {
-  left: 40px;
+.hero-dot.active {
+  background: #d89a73;
+  transform: scale(1.15);
 }
-
-.slider-arrow.next {
-  right: 40px;
-}
-
 /* Diseño responsive del hero slider */
 
 /* Tablets */
 @media (max-width: 992px) {
   .hero-content h1 {
-    font-size: 3.6rem;
+    font-size: 3rem;
     max-width: 800px;
   }
 
@@ -123,20 +124,6 @@
   .hero-btn {
     font-size: 1.1rem;
     padding: 16px 38px;
-  }
-
-  .slider-arrow {
-    width: 55px;
-    height: 55px;
-    font-size: 1.7rem;
-  }
-
-  .slider-arrow.prev {
-    left: 25px;
-  }
-
-  .slider-arrow.next {
-    right: 25px;
   }
 }
 
@@ -157,7 +144,7 @@
   }
 
   .hero-content h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     line-height: 1.2;
     margin-bottom: 25px;
   }
@@ -167,20 +154,14 @@
     padding: 14px 34px;
     border-radius: 40px;
   }
-
-  .slider-arrow {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    top: 58%;
+  .hero-dots {
+    bottom: 25px;
+    gap: 10px;
   }
 
-  .slider-arrow.prev {
-    left: 18px;
-  }
-
-  .slider-arrow.next {
-    right: 18px;
+  .hero-dot {
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -196,7 +177,7 @@
   }
 
   .hero-content h1 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     max-width: 100%;
   }
 
@@ -205,10 +186,13 @@
     padding: 13px 30px;
   }
 
-  .slider-arrow {
-    width: 46px;
-    height: 46px;
-    font-size: 1.3rem;
+  .hero-dots {
+    bottom: 20px;
+  }
+
+  .hero-dot {
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -225,11 +209,5 @@
   .hero-btn {
     font-size: 0.85rem;
     padding: 12px 26px;
-  }
-
-  .slider-arrow {
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
   }
 }

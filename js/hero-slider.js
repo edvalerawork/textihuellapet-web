@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Seleccionar slides originales
   const slides = document.querySelectorAll(".slide");
 
-  // Seleccionar botones de navegación
-  const prevBtn = document.querySelector(".slider-arrow.prev");
-  const nextBtn = document.querySelector(".slider-arrow.next");
+  // Seleccionar dots de navegación
+  const dots = document.querySelectorAll(".hero-dot");
 
   // Clonar primer y último slide para efecto infinito
   const firstClone = slides[0].cloneNode(true);
@@ -30,10 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // Posición inicial
   slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
 
+  // Actualizar dots activos
+  function updateDots() {
+    if (!dots.length) return;
+
+    dots.forEach((dot) => dot.classList.remove("active"));
+
+    let realIndex = currentSlide - 1;
+
+    if (realIndex < 0) realIndex = slides.length - 1;
+    if (realIndex >= slides.length) realIndex = 0;
+
+    dots[realIndex].classList.add("active");
+  }
+
   // Mover al slide actual
   function moveToSlide() {
     slidesContainer.style.transition = "transform 0.8s ease-in-out";
     slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
+
+    updateDots();
   }
 
   // Avanzar al siguiente slide
@@ -65,18 +80,21 @@ document.addEventListener("DOMContentLoaded", function () {
       currentSlide = allSlides.length - 2;
       slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
     }
+
+    updateDots();
   });
 
-  // Evento botón siguiente
-  if (nextBtn) {
-    nextBtn.addEventListener("click", nextSlide);
-  }
-
-  // Evento botón anterior
-  if (prevBtn) {
-    prevBtn.addEventListener("click", prevSlide);
-  }
+  // Evento dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentSlide = index + 1;
+      moveToSlide();
+    });
+  });
 
   // Cambio automático de slides
   setInterval(nextSlide, 5000);
+
+  // Inicializar dots
+  updateDots();
 });
