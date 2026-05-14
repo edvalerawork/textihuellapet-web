@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Seleccionar dots de navegación
   const dots = document.querySelectorAll(".hero-dot");
 
+  if (!slidesContainer || slides.length === 0) return;
+
   // Clonar primer y último slide para efecto infinito
   const firstClone = slides[0].cloneNode(true);
   const lastClone = slides[slides.length - 1].cloneNode(true);
@@ -26,8 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentSlide = 1;
   const slideWidth = 100;
 
+  // Variables para drag / swipe
+  let isDragging = false;
+  let startPos = 0;
+  let currentTranslate = -slideWidth * currentSlide;
+  let prevTranslate = currentTranslate;
+  let animationID;
+
+  // Variable autoplay
+  let autoSlide;
+
   // Posición inicial
-  slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
+  slidesContainer.style.transform = `translateX(${currentTranslate}%)`;
 
   // Actualizar dots activos
   function updateDots() {
@@ -44,25 +56,27 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Mover al slide actual
-  function moveToSlide() {
-    slidesContainer.style.transition = "transform 0.8s ease-in-out";
-    slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
+  function moveToSlide(smooth = true) {
+    slidesContainer.style.transition = smooth
+      ? "transform 0.6s ease-in-out"
+      : "none";
+
+    currentTranslate = -slideWidth * currentSlide;
+    prevTranslate = currentTranslate;
+
+    slidesContainer.style.transform = `translateX(${currentTranslate}%)`;
 
     updateDots();
   }
 
-  // Avanzar al siguiente slide
+  // Avanzar al siguiente slide (siempre infinito)
   function nextSlide() {
-    if (currentSlide >= allSlides.length - 1) return;
-
     currentSlide++;
     moveToSlide();
   }
 
-  // Retroceder al slide anterior
+  // Retroceder al slide anterior (siempre infinito)
   function prevSlide() {
-    if (currentSlide <= 0) return;
-
     currentSlide--;
     moveToSlide();
   }
@@ -70,18 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Reinicio invisible al llegar a clones
   slidesContainer.addEventListener("transitionend", () => {
     if (allSlides[currentSlide].id === "first-clone") {
-      slidesContainer.style.transition = "none";
       currentSlide = 1;
-      slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
+      moveToSlide(false);
     }
 
     if (allSlides[currentSlide].id === "last-clone") {
-      slidesContainer.style.transition = "none";
       currentSlide = allSlides.length - 2;
-      slidesContainer.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
+      moveToSlide(false);
     }
-
-    updateDots();
   });
 
   // Evento dots
@@ -89,12 +99,105 @@ document.addEventListener("DOMContentLoaded", function () {
     dot.addEventListener("click", () => {
       currentSlide = index + 1;
       moveToSlide();
+      startAutoSlide();
     });
   });
 
-  // Cambio automático de slides
-  setInterval(nextSlide, 5000);
+  // Cambio automático de slides (más lento para mejor experiencia)
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoSlide = setInterval(nextSlide, 7000);
+  }
+
+  // Detener autoplay
+  function stopAutoSlide() {
+    clearInterval(autoSlide);
+  }
+
+  // Obtener posición para mouse o touch
+  function getPositionX(event) {
+    return event.type.includes("mouse")
+      ? event.pageX
+      : event.touches[0].clientX;
+  }
+
+  // Iniciar arrastre
+  function dragStart(event) {
+    isDragging = true;
+    startPos = getPositionX(event);
+    slidesContainer.style.transition = "none";
+
+    stopAutoSlide();
+
+    animationID = requestAnimationFrame(animation);
+  }
+
+  // Movimiento durante arrastre
+  function dragMove(event) {
+    if (!isDragging) return;
+
+    const currentPosition = getPositionX(event);
+    const diff = currentPosition - startPos;
+
+    currentTranslate = prevTranslate + (diff / window.innerWidth) * 100;
+  }
+
+  // Finalizar arrastre con loop infinito
+  function dragEnd() {
+    if (!isDragging) return;
+
+    cancelAnimationFrame(animationID);
+    isDragging = false;
+
+    const movedBy = currentTranslate - prevTranslate;
+
+    // Sensibilidad swipe
+    if (movedBy < -15) {
+      currentSlide++;
+    } else if (movedBy > 15) {
+      currentSlide--;
+    }
+
+    moveToSlide();
+
+    startAutoSlide();
+  }
+
+  // Animación en tiempo real
+  function animation() {
+    slidesContainer.style.transform = `translateX(${currentTranslate}%)`;
+
+    if (isDragging) requestAnimationFrame(animation);
+  }
+
+  // Eventos para escritorio
+  slidesContainer.addEventListener("mousedown", dragStart);
+  slidesContainer.addEventListener("mousemove", dragMove);
+  slidesContainer.addEventListener("mouseup", dragEnd);
+  slidesContainer.addEventListener("mouseleave", () => {
+    if (isDragging) dragEnd();
+  });
+
+  // Eventos para móviles
+  slidesContainer.addEventListener("touchstart", dragStart, {
+    passive: true,
+  });
+
+  slidesContainer.addEventListener("touchmove", dragMove, {
+    passive: true,
+  });
+
+  slidesContainer.addEventListener("touchend", dragEnd);
+
+  // Pausar autoplay al pasar mouse
+  slidesContainer.addEventListener("mouseenter", stopAutoSlide);
+
+  // Reanudar autoplay al salir
+  slidesContainer.addEventListener("mouseleave", startAutoSlide);
 
   // Inicializar dots
   updateDots();
+
+  // Iniciar slider automático
+  startAutoSlide();
 });
