@@ -127,20 +127,22 @@
 
 .about-btn-orange {
   background: #d89a73;
-  color: white;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .about-btn-orange:hover {
-  background: #c8865f;
+  background: #d47f4d;
 }
 
 .about-btn-green {
   background: #8ca39c;
-  color: white;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
 .about-btn-green:hover {
-  background: #758f88;
+  background: #6d8d84;
 }
 
 /* Sección historia */

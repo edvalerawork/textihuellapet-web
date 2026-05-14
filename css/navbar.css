@@ -9,11 +9,10 @@
 /* Contenedor general del navbar */
 .navbar-container {
   width: 100%;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   position: relative;
   z-index: 1000;
-  background-color: #8ca39c;
 }
 
 /* Navegación principal */
@@ -24,16 +23,12 @@
 /* Caja principal */
 .nav-wrapper {
   width: 95%;
-  max-width: 1250px;
   padding: 14px 28px;
   margin: 0 auto;
-  background: white;
-  border-radius: 20px;
   display: flex;
   justify-content: center;
   gap: 35px;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Menús laterales */
@@ -148,7 +143,7 @@
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 6px solid #8ca39c;
+  border: 4px solid #8ca39c41;
 
   position: absolute;
   top: 100%;
@@ -168,8 +163,8 @@
 }
 
 .mobile-menu a:hover {
-  background: #f7f7f7;
-  color: #8ca39c;
+  background: #d89a730a;
+  color: #d89a73;
 }
 
 /* Menú móvil activo */
@@ -219,10 +214,7 @@
     align-items: center;
     width: 92%;
     margin: 0 auto;
-    background: white;
     padding: 14px 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   }
 
   .nav-left,
@@ -255,9 +247,7 @@
     align-items: center;
     width: 92%;
     margin: 0 auto;
-    background: white;
     padding: 14px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   }
 
   /* Logo responsive */

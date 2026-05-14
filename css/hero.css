@@ -20,7 +20,7 @@
   height: 100%;
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: center right;
   background-repeat: no-repeat;
 }
 
@@ -28,7 +28,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.116);
 }
 
 /* Contenido principal */
@@ -39,15 +39,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin-left: 20%;
+  transform: translateY(-8%);
   color: white;
 }
 
 /* Subtítulo */
 .hero-subtitle {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 15px;
 }
@@ -64,18 +67,45 @@
 /* Botón principal */
 .hero-btn {
   display: inline-block;
-  background: #8ca39c;
-  color: white;
   padding: 18px 45px;
   border-radius: 50px;
   text-decoration: none;
   font-size: 1.3rem;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.hero-btn:hover {
-  background: #7b918b;
+/* Slide 1 */
+.btn-slide1 {
+  background: #8ca39c;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.btn-slide1:hover {
+  background: #6d8d84;
+}
+
+/* Slide 2 */
+.btn-slide2 {
+  background: #d1aa85;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.btn-slide2:hover {
+  background: #bd9169;
+}
+
+/* Slide 3 */
+.btn-slide3 {
+  background: #d89a73;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.btn-slide3:hover {
+  background: #d47f4d;
 }
 
 /* Navegación */
@@ -112,13 +142,21 @@
 
 /* Tablets */
 @media (max-width: 992px) {
+  .slide {
+    background-position: 70% center;
+  }
+  .hero-content {
+    max-width: 600px;
+    margin-left: 12%;
+    transform: translateY(-6%);
+  }
   .hero-content h1 {
     font-size: 3rem;
     max-width: 800px;
   }
 
   .hero-subtitle {
-    font-size: 1.6rem;
+    font-size: 0.8rem;
   }
 
   .hero-btn {
@@ -130,16 +168,20 @@
 /* Móviles */
 @media (max-width: 768px) {
   .hero-slider {
-    height: calc(100vh - 84px);
-    min-height: calc(100vh - 84px);
+    height: 68vh;
+    min-height: 68vh;
   }
-
+  .slide {
+    background-position: 78% center;
+  }
   .hero-content {
-    padding: 0 25px;
+    max-width: 90%;
+    margin-left: 8%;
+    transform: translateY(-4%);
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     margin-bottom: 12px;
   }
 
@@ -168,14 +210,12 @@
 /* Celulares pequeños */
 @media (max-width: 480px) {
   .hero-slider {
-    height: calc(100vh - 80px);
-    min-height: calc(100vh - 80px);
+    height: 62vh;
+    min-height: 62vh;
   }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
+  .slide {
+    background-position: 82% center;
   }
-
   .hero-content h1 {
     font-size: 2rem;
     max-width: 100%;
@@ -198,6 +238,9 @@
 
 /* Pantallas extra pequeñas */
 @media (max-width: 360px) {
+  .slide {
+    background-position: 82% center;
+  }
   .hero-content h1 {
     font-size: 2.1rem;
   }
