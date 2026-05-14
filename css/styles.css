@@ -569,6 +569,32 @@
 .product-btn:hover {
   background: #c8865f;
 }
+
+/*Whatsapp Flotante*/
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 62px;
+  height: 62px;
+  background: #659c79;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  background: #43855d;
+}
 /* Diseño responsive general */
 
 /* Laptops y tablets grandes */

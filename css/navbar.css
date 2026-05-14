@@ -172,6 +172,28 @@
   display: flex;
 }
 
+/*Iconos Redes sociales Nav*/
+.nav-social-floating {
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 1001;
+}
+
+.nav-social-floating a {
+  color: #7f9b95;
+  font-size: 1.35rem;
+  transition: all 0.3s ease;
+}
+
+.nav-social-floating a:hover {
+  color: #d89a73;
+  transform: translateY(-2px);
+}
+
 /* Laptops pequeñas */
 @media (max-width: 1200px) {
   .nav-wrapper {
@@ -197,6 +219,9 @@
   .logo-pet-below {
     font-size: clamp(0.7rem, 0.8vw, 0.9rem);
     letter-spacing: 3px;
+  }
+  .nav-social-floating {
+    display: none;
   }
 }
 
