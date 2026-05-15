@@ -185,7 +185,7 @@
   height: 70px;
   border-radius: 50%;
   border: none;
-  background: rgba(140, 163, 156, 0.9);
+  background: #8ca39c;
   color: white;
   font-size: 1.8rem;
   cursor: pointer;
@@ -193,7 +193,7 @@
 }
 
 .story-play:hover {
-  background: #8ca39c;
+  background: #6d8d84;
 }
 
 /* Contenido de texto */
@@ -230,12 +230,12 @@
   color: white;
   padding: 15px 35px;
   border-radius: 50px;
-  border: none;
+  border: 1px solid #ffffff;
   cursor: pointer;
   font-weight: 600;
 }
 .story-btn:hover {
-  background: #c8865f;
+  background: #d47f4d;
 }
 
 /* Modal de video */
@@ -405,7 +405,7 @@
   width: 100%;
   min-height: 100vh;
   background: #ffffff;
-  padding: 90px 0;
+
   display: flex;
   align-items: center;
 }
@@ -559,7 +559,8 @@
   display: inline-block;
   padding: 14px 34px;
   background: #d89a73;
-  color: white;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   text-decoration: none;
   border-radius: 999px;
   font-weight: 600;
@@ -567,7 +568,156 @@
 }
 
 .product-btn:hover {
-  background: #c8865f;
+  background: #d47f4d;
+}
+
+/* Sección galería */
+.gallery-section {
+  width: 100%;
+  min-height: 100vh;
+  background: #f6f3ee;
+  padding: 90px 0;
+}
+
+/* Encabezado */
+.gallery-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.gallery-line {
+  width: 95px;
+  height: 4px;
+  background: #8ca39c;
+  margin: 0 auto 25px;
+  border-radius: 5px;
+}
+
+.gallery-header h1 {
+  font-size: clamp(2rem, 2.5vw, 3.2rem);
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+}
+
+.gallery-header p {
+  font-size: 1rem;
+  color: #5b6d82;
+  line-height: 1.8;
+}
+
+/* Filtros */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 55px;
+}
+
+.filter-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  background: white;
+  color: #8ca39c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #8ca39c;
+  color: white;
+}
+
+/* Grid galería */
+.gallery-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center;
+  gap: 28px;
+}
+
+/* Tarjetas */
+.gallery-item {
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.4s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-item.hide {
+  display: none;
+}
+
+/* Vista previa index */
+.gallery-preview {
+  padding: 90px 20px;
+  text-align: center;
+  background: white;
+}
+
+.gallery-preview-line {
+  width: 90px;
+  height: 4px;
+  background: #8ca39c;
+  margin: 0 auto 25px;
+}
+
+.gallery-preview h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin-bottom: 20px;
+}
+
+.gallery-preview p {
+  max-width: 750px;
+  margin: 0 auto 30px;
+  color: #5b6d82;
+  line-height: 1.8;
+}
+
+/* Contenedor botón */
+.gallery-preview-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Botón */
+.gallery-preview-btn {
+  display: inline-block;
+  padding: 15px 34px;
+  background: #d89a73;
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.gallery-preview-btn:hover {
+  background: #d47f4d;
 }
 
 /*Whatsapp Flotante*/
@@ -585,7 +735,7 @@
   align-items: center;
   font-size: 30px;
   text-decoration: none;
-  
+
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   z-index: 9999;
   transition: all 0.3s ease;
@@ -595,6 +745,7 @@
   transform: scale(1.08);
   background: #43855d;
 }
+
 /* Diseño responsive general */
 
 /* Laptops y tablets grandes */
@@ -958,6 +1109,25 @@
   .products-line {
     width: 75px;
   }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+    gap: 22px;
+  }
+  .gallery-section {
+    padding: 100px 18px 70px;
+  }
+  .gallery-item {
+    max-width: 280px;
+  }
+
+  .gallery-item img {
+    height: 220px;
+  }
+
+  .filter-btn {
+    padding: 12px 22px;
+    font-size: 0.9rem;
+  }
 }
 
 /* Celulares pequeños */
@@ -1044,5 +1214,22 @@
   .product-btn {
     padding: 13px 28px;
     font-size: 0.95rem;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .gallery-item {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .gallery-header h1 {
+    font-size: 2rem;
+  }
+
+  .gallery-item img {
+    height: 220px;
   }
 }

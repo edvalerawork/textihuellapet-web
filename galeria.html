@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/galeria.css" />
   </head>
 
   <body>
@@ -32,7 +33,84 @@
     <div id="navbar"></div>
 
     <!-- Contenido principal -->
-    <main></main>
+    <main>
+      <!-- Sección Galeria Hero -->
+      <section class="hero-slider">
+        <div class="slides-container">
+          <div
+            class="slide"
+            style="background-image: url(assets/img/carousel-2.png)"
+          >
+            <div class="overlay"></div>
+
+            <div class="hero-content">
+              <p class="hero-subtitle">- PERSONALIZACIÓN REAL -</p>
+
+              <h1>Inspírate con creaciones únicas para cada mascota</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gallery-section">
+        <!-- Encabezado -->
+        <div class="gallery-header">
+          <div class="gallery-line"></div>
+          <h1>Galería de momentos felices</h1>
+          <p>
+            Descubre cómo cada creación transforma recuerdos en compañía, juego
+            y bienestar para mascotas únicas.
+          </p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="oso">Oso</button>
+          <button class="filter-btn" data-filter="pez">Pez</button>
+          <button class="filter-btn" data-filter="hueso">Hueso</button>
+          <button class="filter-btn" data-filter="esfera">Esfera</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="gallery-grid">
+          <div class="gallery-item oso">
+            <img src="assets/img/gallery-oso-1.jpg" alt="Oso" />
+          </div>
+
+          <div class="gallery-item esfera">
+            <img src="assets/img/gallery-esfera-1.png" alt="Esfera" />
+          </div>
+
+          <div class="gallery-item hueso">
+            <img src="assets/img/gallery-hueso-1.png" alt="Hueso" />
+          </div>
+
+          <div class="gallery-item pez">
+            <img src="assets/img/gallery-pez-1.png" alt="Pez" />
+          </div>
+
+          <div class="gallery-item oso">
+            <img src="assets/img/gallery-oso-2.jpg" alt="Oso" />
+          </div>
+
+          <div class="gallery-item pez">
+            <img src="assets/img/gallery-pez-2.png" alt="Pez" />
+          </div>
+
+          <div class="gallery-item hueso">
+            <img src="assets/img/gallery-hueso-2.jpg" alt="Hueso" />
+          </div>
+
+          <div class="gallery-item esfera">
+            <img src="assets/img/gallery-esfera-2.png" alt="Esfera" />
+          </div>
+
+          <div class="gallery-item oso">
+            <img src="assets/img/gallery-oso-3.png" alt="Oso" />
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Pie de página -->
     <div id="footer"></div>
@@ -48,5 +126,6 @@
     <!-- Archivos JavaScript -->
     <script src="js/components.js"></script>
     <script src="js/navbar.js"></script>
+    <script src="js/gallery.js"></script>
   </body>
 </html>
